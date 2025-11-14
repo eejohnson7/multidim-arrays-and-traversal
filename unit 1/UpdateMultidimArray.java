@@ -1,4 +1,4 @@
-class Solution {
+class UpdateMultidimArray {
     public static void main(String[] args) {
         String[][] apartmentBuilding = {
             {"Apt 101", "Apt 102", "Apt 103"},
