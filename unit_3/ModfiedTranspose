@@ -1,0 +1,49 @@
+/*
+ * You've just learned how to transpose a matrix. Now, let's add a twist! Modify the transformMatrix function to transpose 
+ * the given matrix in reverse order, starting from the last column and moving to the first column. 
+ * This slight modification will provide a fresh perspective on transposing matrices. Go ahead and give it a try!
+ */
+
+ import java.util.Arrays;
+
+class ModifiedTranspose {
+
+    public static int[][] transformMatrix(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0) return new int[0][0];
+
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        int[][] transposed = new int[cols][rows];
+
+        // TODO: Modify the loop to transpose the matrix in reverse order
+        for (int i = 0; i < rows; i++) {
+            for (int j = cols - 1; j >= 0; j--) {
+                transposed[cols - 1 - j][i] = matrix[i][j];
+            }
+        }
+
+        return transposed;
+    }
+
+    public static void main(String[] args) {
+        int[][] seatingChart = {
+            {101, 102, 103, 104},
+            {201, 202, 203, 204},
+            {301, 302, 303, 304}
+        };
+        
+        int[][] goalSeatingChart = {
+            {104, 204, 304}, 
+            {103, 203, 303},
+            {102, 202, 302},
+            {101, 201, 301}
+        };
+        
+
+        // TODO: Store the result of transformMatrix in transposedSeating and print it
+        int[][] transposedSeating = transformMatrix(seatingChart);
+        for (int[] row : transposedSeating) {
+            System.out.println(Arrays.toString(row));
+        }
+    }
+}
